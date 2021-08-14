@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
-# sudo apt update
-# sudo apt-get install -y pdflatex texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+#   Build
 
-# or Ubuntu 18.04
-sudo apt install texlive-full -y
+set -e
+
+#   Build Docs
+echo "=== `date` : Start Building Lab $1 Docs==="
+cd ~/labtainer/trunk/labs/${1}/docs
+rm lab-guide.pdf || true
+make clean
+make
