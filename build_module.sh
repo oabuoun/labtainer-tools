@@ -13,7 +13,7 @@ images=$(docker images $1* -q)
 echo "--------------------------------"
 echo $images
 echo "--------------------------------"
-docker rmi $images || true
+docker rmi -f $images || true
 
 #docker rmi $(docker images -f “dangling=true” -q)
 
