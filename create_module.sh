@@ -3,6 +3,8 @@
 
 docker login
 
+./build.sh $1
+
 echo "=== `date` : Publish Labtainer Lab $1 $==="
 #   Publish
 cd ~/labtainer/trunk/labs/
