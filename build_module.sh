@@ -7,7 +7,7 @@ set -e
 echo "=== `date` : Removing old config files and docker images of  $1 ==="
 # Delete old config
 cd ~/labtainer/trunk/labs/${1}
-find . -name .gz -exec rm -rf {} \;
+find . -name *.gz -exec rm -rf {} \;
 
 images=$(docker images $1* -q)
 echo "--------------------------------"
